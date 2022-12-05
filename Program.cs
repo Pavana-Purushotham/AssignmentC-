@@ -170,13 +170,15 @@ namespace Assignment
             Thread.Sleep(3000);
         }
 
-        public static void exercise5()  //Switch to browser
+        public static void exercise5()  
         {
             IWebElement openwindow = driver.FindElement(By.Id("openwindow"));
             openwindow.Click();
             Thread.Sleep(2000);
 
 
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(2000);
             // browser.actions().keyDown(protractor.Key.CONTROL).sendKeys('w').perform();
@@ -192,6 +194,8 @@ namespace Assignment
             opentabbtn.Click();
             Thread.Sleep(3000);
 
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(2000);
         }
